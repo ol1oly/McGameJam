@@ -9,55 +9,58 @@ public class AttractableObject : MonoBehaviour
     private bool isAttracted = false;
     private Vector2 originalPosition; //vecteur (i,j) par rapport a og pos?
     private bool shouldReturnToOriginal = false;
-
+    private Villager villager;
+    private Rigidbody2D rb;
     
     void Start()
     {
         originalPosition = transform.position; //huh
+        villager = GetComponent<Villager>();
     }
-
-    void Update()
+    
+    void Awake()
     {
-        if (isAttracted && attractionTarget != null)
-        {
-            
-            Vector3 pos = transform.position;
-            float targetX = attractionTarget.position.x;
-
-            pos.x = Mathf.MoveTowards(
-                pos.x,
-                targetX,
-                moveSpeed * Time.deltaTime
-            );
-
-            transform.position = pos;
-
-            if (Mathf.Abs(pos.x - targetX) < 0.1f)
-            {
-                OnReachedAttraction();
-            }
-        }
-        else if (shouldReturnToOriginal)
-        {
-            Vector3 pos = transform.position;
-            pos.x = Mathf.MoveTowards(
-                pos.x,
-                originalPosition.x,
-                moveSpeed * Time.deltaTime
-            );
-            transform.position = pos;
-        }
+        rb = GetComponent<Rigidbody2D>();
     }
 
+    void FixedUpdate()
+    {
+    if (isAttracted && attractionTarget != null)
+    {
+        float deltaX = attractionTarget.position.x - rb.position.x;
+        
+        if (Mathf.Abs(deltaX) < 0.1f)
+        {
+            rb.linearVelocity = Vector2.zero;
+            OnReachedAttraction();
+            Debug.Log("HeyX+" + rb.linearVelocity.x);
+            return;
+        }
+        Debug.Log("HeyX+" + rb.linearVelocity.x);
+        float dir = Mathf.Sign(deltaX);
+        rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
+    }
+    else if (shouldReturnToOriginal)
+    {
+        float deltaX = originalPosition.x - rb.position.x;
+
+        if (Mathf.Abs(deltaX) < 0.1f)
+        {
+            rb.linearVelocity = Vector2.zero;
+            Returned();
+            Debug.Log("HeyX+" + rb.linearVelocity.x);
+            return;
+        }
+
+        float dir = Mathf.Sign(deltaX);
+        rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
+        Debug.Log("HeyX+" + rb.linearVelocity.x);
+    }
+}
+    
     public void SetChecking()
     {
-        //if has a villager component
-        Villager villager = GetComponent<Villager>();
-        if(villager != null)
-        {
-            villager.SetCurrentState(VillagerState.Checking);
-        }
-        
+        villager.SetCurrentState(VillagerState.Checking);
     }
     
 
@@ -68,7 +71,7 @@ public class AttractableObject : MonoBehaviour
         attractionTarget = target;
         isAttracted = true;
         shouldReturnToOriginal = false;
-        Debug.Log(gameObject.name + "is now attracted to"+target.name);
+        Debug.LogWarning(gameObject.name + "is now attracted to"+target.name);
         
     }
 
@@ -76,20 +79,29 @@ public class AttractableObject : MonoBehaviour
     {
         isAttracted = false;
         attractionTarget = null;
-        shouldReturnToOriginal = returnToStart;
-        Villager villager = GetComponent<Villager>();
-        if(villager != null)
-        {
-            villager.SetCurrentStateBack();
-        }
+        
+        
+        Debug.LogWarning("stop attraction");
+        
+    }
+    private void Returned()
+    {
+        villager.SetCurrentStateBack();
+        shouldReturnToOriginal = false;
     }
 
     private void OnReachedAttraction()
     {
         Debug.Log(gameObject.name + "reached the attraction point!");
         //custom stuff can be added here lad
-        StopAttraction();
+        
+        StopAttraction(true);
+        villager.gameObject.GetComponent<Animator>().SetTrigger("Check");
+        rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
     }
-
-    //aka we make something attracted to something and potentially call funcs inbetween
+    [SerializeField] private float waitBeforeReturning = 2f;
+    public void StartReturn()
+    {
+        shouldReturnToOriginal = true;
+    }
 }
