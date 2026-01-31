@@ -92,4 +92,9 @@ public class Villager : MonoBehaviour
         anim.SetTrigger("Idle");
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
     }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        direction = direction == 0 ? 1 : 0; // Reverse direction
+        
+    }
 }
