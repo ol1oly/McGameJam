@@ -4,7 +4,13 @@ public class CrowInteraction : MonoBehaviour
 {
     private IClickable currentInteractable;
     private ClickHandler currentClickHandle;
-    [SerializeField] private MouseInputProvider mouse;
+    // [SerializeField] private MouseInputProvider mouse;
+    private MouseInputProvider mouse;
+
+    void Awake()
+    {
+        mouse = FindObjectOfType<MouseInputProvider>();
+    }
 
     void OnEnable()
     {

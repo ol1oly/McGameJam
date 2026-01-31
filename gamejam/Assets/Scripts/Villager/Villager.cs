@@ -20,9 +20,15 @@ public class Villager : MonoBehaviour
     {
         currentState = state;
     }
+    public void SetCurrentStateBack()
+    {
+        currentState = VillagerState.Idle;
+        StopCoroutine(RandomMovementCoroutine());
+        StartCoroutine(RandomMovementCoroutine());
+    }
     public IEnumerator RandomMovementCoroutine()
     {
-        while (true)
+        while (currentState!=VillagerState.Checking)
         {
             yield return new WaitForSeconds(Random.Range(2, 5));
             RandomMovement();

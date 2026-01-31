@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-using NUnit.Framework;
 using UnityEngine;
 
 public class AttractableObject : MonoBehaviour
@@ -7,12 +5,10 @@ public class AttractableObject : MonoBehaviour
 
     public float moveSpeed = 2f;
     public string attractionTag = "Attraction"; //what can attract the obj
-
-     private Transform attractionTarget;
+    private Transform attractionTarget;
     private bool isAttracted = false;
     private Vector2 originalPosition; //vecteur (i,j) par rapport a og pos?
     private bool shouldReturnToOriginal = false;
-
 
     
     void Start()
@@ -20,34 +16,54 @@ public class AttractableObject : MonoBehaviour
         originalPosition = transform.position; //huh
     }
 
-
     void Update()
     {
-        if(isAttracted && attractionTarget != null)
+        if (isAttracted && attractionTarget != null)
         {
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                attractionTarget.position,
+            
+            Vector3 pos = transform.position;
+            float targetX = attractionTarget.position.x;
+
+            pos.x = Mathf.MoveTowards(
+                pos.x,
+                targetX,
                 moveSpeed * Time.deltaTime
             );
 
-            if(Vector2.Distance(transform.position, attractionTarget.position) < 0.1f)
+            transform.position = pos;
+
+            if (Mathf.Abs(pos.x - targetX) < 0.1f)
             {
                 OnReachedAttraction();
-            }else if (shouldReturnToOriginal)
-            {
-                transform.position = Vector2.MoveTowards(
-                    transform.position, 
-                    originalPosition, 
-                    moveSpeed * Time.deltaTime
-                );//aka moves back
             }
+        }
+        else if (shouldReturnToOriginal)
+        {
+            Vector3 pos = transform.position;
+            pos.x = Mathf.MoveTowards(
+                pos.x,
+                originalPosition.x,
+                moveSpeed * Time.deltaTime
+            );
+            transform.position = pos;
         }
     }
 
+    public void SetChecking()
+    {
+        //if has a villager component
+        Villager villager = GetComponent<Villager>();
+        if(villager != null)
+        {
+            villager.SetCurrentState(VillagerState.Checking);
+        }
+        
+    }
+    
 
 
-     public void AttractTo(Transform target)
+
+    public void AttractTo(Transform target)
     {
         attractionTarget = target;
         isAttracted = true;
@@ -61,6 +77,11 @@ public class AttractableObject : MonoBehaviour
         isAttracted = false;
         attractionTarget = null;
         shouldReturnToOriginal = returnToStart;
+        Villager villager = GetComponent<Villager>();
+        if(villager != null)
+        {
+            villager.SetCurrentStateBack();
+        }
     }
 
     private void OnReachedAttraction()
