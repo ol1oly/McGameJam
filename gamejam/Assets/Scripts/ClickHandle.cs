@@ -7,7 +7,7 @@ public class ClickHandler : MonoBehaviour
     [SerializeField]
     private bool _hasToBeInRange;
     private bool _isInRange;
-    [SerializeField] 
+    [SerializeField]
     private UnityEvent _clicked;
 
     private MouseInputProvider _mouse;
@@ -48,12 +48,12 @@ public class ClickHandler : MonoBehaviour
             {
                 player.GetComponent<PlayerMovement>().SetMoveToTarget(true, transform);
             }
-            
+
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("what tag trigger?"+col.gameObject.tag);
+        Debug.Log("what tag trigger?" + col.gameObject.tag);
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Near the object");
