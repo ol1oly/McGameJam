@@ -89,7 +89,6 @@ public class AttractableObject : MonoBehaviour
         villager.SetCurrentStateBack();
         shouldReturnToOriginal = false;
     }
-
     private void OnReachedAttraction()
     {
         Debug.Log(gameObject.name + "reached the attraction point!");
