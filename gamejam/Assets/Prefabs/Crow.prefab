@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2731854493233132102}
   - component: {fileID: 5374305256693186539}
   - component: {fileID: 8487265850340113071}
+  - component: {fileID: 6376318057336638591}
+  - component: {fileID: 4820610666329438670}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Player
@@ -179,3 +181,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6376318057336638591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024253363512690336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ed1c1a938b3e64eb960fd9151509dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowInteraction
+--- !u!114 &4820610666329438670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024253363512690336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a1263b4ab19254496847d55c785409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowFollowMouse
+  speed: 4

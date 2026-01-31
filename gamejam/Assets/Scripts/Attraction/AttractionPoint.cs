@@ -31,6 +31,7 @@ public class AttractionPoint : MonoBehaviour
                 if (attractor != null)
                 {
                     attractor.AttractTo(transform);
+                    attractor.SetChecking();
                 }
             }
         }
@@ -44,6 +45,7 @@ public class AttractionPoint : MonoBehaviour
                     if(attractor != null)
                     {
                         attractor.AttractTo(transform); //since stuff is not longer null over there and update runs every frame attraction happens
+                        attractor.SetChecking();
                     }
 
                 }
