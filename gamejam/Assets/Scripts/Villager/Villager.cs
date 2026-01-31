@@ -70,6 +70,7 @@ public class Villager : MonoBehaviour
         {
             
         }
+        AnimationVillager();
     }
 
     public void RandomChoice()
@@ -80,16 +81,17 @@ public class Villager : MonoBehaviour
     {
         //TODO: Anis coding part
     }
+    private void AnimationVillager()
+    {
+        float speed = rb.linearVelocity.magnitude;
+        anim.SetFloat("speed", speed);
+    }
     public void Walk()
     {
-        Debug.Log("Walking");
-        anim.SetTrigger("Walk");
         rb.linearVelocity = new Vector2(direction == 0 ? -moveSpeed : moveSpeed, rb.linearVelocityY);
     }
     public void Idle()
     {
-        Debug.Log("Idle");
-        anim.SetTrigger("Idle");
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
     }
     public void OnCollisionEnter2D(Collision2D other)
