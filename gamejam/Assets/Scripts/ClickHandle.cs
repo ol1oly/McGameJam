@@ -4,12 +4,17 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class ClickHandler : MonoBehaviour
 {
+    [SerializeField]
+    private bool _hasToBeInRange;
+    private bool _isInRange;
     [SerializeField] 
     private UnityEvent _clicked;
 
     private MouseInputProvider _mouse;
     private BoxCollider2D _collider;
     private IClickable _clickable;
+    private GameObject crow;
+    private GameObject player;
 
     private void Awake()
     {
@@ -17,8 +22,11 @@ public class ClickHandler : MonoBehaviour
         _mouse = FindObjectOfType<MouseInputProvider>();
         _mouse.Clicked += MouseOnClicked;
 
-        // Cache interface if implemented on this object
         _clickable = GetComponent<IClickable>();
+    }
+    public void Start()
+    {
+        player = GameObject.FindWithTag("Player");
     }
 
     private void OnDestroy()
@@ -31,11 +39,36 @@ public class ClickHandler : MonoBehaviour
     {
         if (_collider.bounds.Contains(_mouse.WorldPosition))
         {
-            // Call interface method
+            if (!_hasToBeInRange)
+            {
+                _clickable?.OnClick();
+                _clicked?.Invoke();
+            }
+            else
+            {
+                player.GetComponent<PlayerMovement>().SetMoveToTarget(true, transform);
+            }
+            
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("what tag trigger?"+col.gameObject.tag);
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("Near the object");
             _clickable?.OnClick();
-
-            // Also still invoke UnityEvent
             _clicked?.Invoke();
+
+            _isInRange = true;
+            player.GetComponent<PlayerMovement>().SetMoveToTarget(false, null);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            _isInRange = false;
         }
     }
 }
