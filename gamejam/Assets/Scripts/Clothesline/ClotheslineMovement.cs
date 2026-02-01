@@ -41,12 +41,6 @@ public class ClotheslineMovement : MonoBehaviour, IClickable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
    
     
     

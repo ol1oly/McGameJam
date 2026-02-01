@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d1f714ad859f4ea1478c759646b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
-  _hasToBeInRange: 0
   _clicked:
     m_PersistentCalls:
       m_Calls: []
@@ -532,7 +531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d1f714ad859f4ea1478c759646b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
-  _hasToBeInRange: 1
   _clicked:
     m_PersistentCalls:
       m_Calls: []
@@ -634,7 +632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d1f714ad859f4ea1478c759646b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
-  _hasToBeInRange: 1
   _clicked:
     m_PersistentCalls:
       m_Calls: []
@@ -896,7 +893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d1f714ad859f4ea1478c759646b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
-  _hasToBeInRange: 1
   _clicked:
     m_PersistentCalls:
       m_Calls: []
@@ -1115,7 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClotheslineMovement
   isRight: 1
-  rightMaxPos: 2.6
+  rightMaxPos: 3
   leftMaxPos: 0
 --- !u!61 &1126731081
 BoxCollider2D:
@@ -1175,7 +1171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d1f714ad859f4ea1478c759646b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
-  _hasToBeInRange: 1
   _clicked:
     m_PersistentCalls:
       m_Calls: []

@@ -17,6 +17,7 @@ public class FallingObject : MonoBehaviour, IClickable
     public void OnClick()
     {
         body.isKinematic = false;
+
     }
 
 }
