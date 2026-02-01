@@ -9,6 +9,12 @@ TagManager:
   - Guard
   - Apple
   - Pickupable
+  - Clothing
+  - Torch
+  - TorchGuard
+  - Horse
+  - Play
+  - FinalLevelLantern
   layers:
   - Default
   - TransparentFX
