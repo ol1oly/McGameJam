@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class ClickHandler : MonoBehaviour
+public class ClickHandler : MonoBehaviour, IClickable
 {
     [SerializeField]
     private UnityEvent _clicked;
 
-    public void HandleClick()
+
+    public void OnClick()
     {
         _clicked?.Invoke();
-        Debug.Log("salut");
     }
 }

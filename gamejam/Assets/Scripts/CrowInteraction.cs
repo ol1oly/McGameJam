@@ -1,11 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CrowInteraction : MonoBehaviour
 {
-    private IClickable currentInteractable;
-    private ClickHandler currentClickHandle;
-    // [SerializeField] private MouseInputProvider mouse;
+    private readonly List<IClickable> currentInteractables = new();
     private MouseInputProvider mouse;
+    private GameObject currentHover;
 
     void Awake()
     {
@@ -24,22 +24,27 @@ public class CrowInteraction : MonoBehaviour
 
     private void TryInteract()
     {
-        currentInteractable?.OnClick();
-        currentClickHandle?.HandleClick();
+        for (int i = 0; i < currentInteractables.Count; i++)
+        {
+            currentInteractables[i].OnClick();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        currentInteractable = other.GetComponent<IClickable>();
-        currentClickHandle = other.GetComponent<ClickHandler>();
+        var clickables = other.GetComponents<IClickable>();
+        if (clickables.Length == 0) return;
+
+        currentHover = other.gameObject;
+        currentInteractables.Clear();
+        currentInteractables.AddRange(clickables);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<IClickable>() == currentInteractable || other.GetComponent<ClickHandler>() == currentClickHandle)
-        {
-            currentInteractable = null;
-            currentClickHandle = null;
-        }
+        if (currentHover != other.gameObject) return;
+
+        currentHover = null;
+        currentInteractables.Clear();
     }
 }
