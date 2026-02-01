@@ -13,6 +13,7 @@ TagManager:
   - TorchGuard
   - Horse
   - Play
+  - FinalLevelLantern
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Lantern : MonoBehaviour
+public class FinalLevelLantern : MonoBehaviour
 {
     public GameObject oilSpillPrefab;
 
