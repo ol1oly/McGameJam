@@ -6,9 +6,7 @@ public class ClotheslineMovement : MonoBehaviour, IClickable
     [SerializeField]
     private bool isRight;
 
-    [SerializeField]
     private float rightMaxPos;
-    [SerializeField]
     private float leftMaxPos;
 
     private GameObject clothing;
@@ -21,7 +19,8 @@ public class ClotheslineMovement : MonoBehaviour, IClickable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rightMaxPos = transform.position.x;
+        leftMaxPos = transform.position.x;
     }
     public void OnClick()
     {
@@ -40,8 +39,6 @@ public class ClotheslineMovement : MonoBehaviour, IClickable
             clothing.GetComponent<ClothingMovement>().moveLeft(leftMaxPos);
         }
     }
-
-   
     
     
 }

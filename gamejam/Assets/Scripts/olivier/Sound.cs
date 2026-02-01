@@ -1,0 +1,24 @@
+
+using UnityEngine;
+
+
+
+[CreateAssetMenu(fileName = "NewSound", menuName = "Audio/Sound")]
+public class Sound : ScriptableObject
+{
+    public string name;
+    public AudioClip clip;
+
+    [Range(0f, 1f)]
+    public float volume;
+
+    [Range(0.1f, 3f)]
+    public float pitch;
+
+    public bool loop = false;
+
+    [Range(0f, 30f)]
+    public float fadeInTime = 0f;
+
+    public bool playOneShot = true;
+}
