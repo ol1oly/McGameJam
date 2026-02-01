@@ -68,6 +68,7 @@ public class AttractableObject : MonoBehaviour
 
     public void AttractTo(Transform target)
     {
+        originalPosition = transform.position;
         attractionTarget = target;
         isAttracted = true;
         shouldReturnToOriginal = false;

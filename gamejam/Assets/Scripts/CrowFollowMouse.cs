@@ -8,6 +8,7 @@ public class CrowFollowMouse : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
 
+
     void Awake()
     {
         mouse = FindObjectOfType<MouseInputProvider>();

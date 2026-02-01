@@ -5,13 +5,14 @@ public class CrowInteraction : MonoBehaviour
 {
     private readonly List<IClickable> currentInteractables = new();
     private MouseInputProvider mouse;
-    private Animator anim;
+    private Animator[] anim_crows;
     private GameObject currentHover;
 
     void Awake()
     {
         mouse = FindObjectOfType<MouseInputProvider>();
-        anim = GetComponent<Animator>();
+        anim_crows = GetComponentsInChildren<Animator>();
+        
     }
 
     void OnEnable()
@@ -26,7 +27,12 @@ public class CrowInteraction : MonoBehaviour
 
     private void TryInteract()
     {
-        if (currentInteractables.Count>0) anim.SetTrigger("Interact");
+        if (currentInteractables.Count>0) {
+            foreach(Animator anim in anim_crows)
+            {
+                anim.SetTrigger("Interact");
+            }
+        }
         for (int i = 0; i < currentInteractables.Count; i++)
         {
             currentInteractables[i].OnClick();
