@@ -8,8 +8,19 @@ public class ClickHandler : MonoBehaviour, IClickable
     private UnityEvent _clicked;
     
 
+    [SerializeField]
+    private bool _isPickupable = false;
+
     public void OnClick()
     {
+         if (_isPickupable)
+        {
+            CrowInventory crow = FindObjectOfType<CrowInventory>();
+            if (crow != null)
+            {
+                crow.TryPickup(gameObject);
+            }
+        }
         _clicked?.Invoke();
     }
 }
