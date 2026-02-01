@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - ennemy
+  - success
   - Guard
   - Apple
   - Pickupable
@@ -11,13 +13,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - ennemy
+  - player
+  - props
+  - floor
   - 
   - 
   - 
