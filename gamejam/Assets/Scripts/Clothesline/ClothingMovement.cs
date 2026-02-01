@@ -78,6 +78,10 @@ public class ClothingMovement : MonoBehaviour//, IClickable
         {
             Reset();
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
    
