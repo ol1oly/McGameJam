@@ -4,21 +4,29 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - ennemy
+  - success
   - Guard
   - Apple
   - Pickupable
   - Clothing
+=======
+  - Torch
+  - TorchGuard
+  - Horse
+  - Play
+  - FinalLevelLantern
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - ennemy
+  - player
+  - props
+  - floor
   - 
   - 
   - 

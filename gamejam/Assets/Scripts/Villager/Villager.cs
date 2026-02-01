@@ -7,7 +7,7 @@ public class Villager : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float moveSpeed = 1f;
     private VillagerState currentState = VillagerState.Walking;
-
+    
 
     void Start()
     {
@@ -23,9 +23,10 @@ public class Villager : MonoBehaviour
     public void SetCurrentStateBack()
     {
         currentState = VillagerState.Idle;
-        StopCoroutine(RandomMovementCoroutine());
+        StopAllCoroutines();
         StartCoroutine(RandomMovementCoroutine());
     }
+
     public IEnumerator RandomMovementCoroutine()
     {
         while (currentState!=VillagerState.Checking)
@@ -85,19 +86,34 @@ public class Villager : MonoBehaviour
     }
     public void Check()
     {
+        Debug.Log("Checking...");
         //TODO: Anis coding part
     }
+    private float directionFactor = 1f;
     private void AnimationVillager()
     {
         float speed = rb.linearVelocity.magnitude;
         anim.SetFloat("speed", speed);
+        
+        if (rb.linearVelocity.x > 0)
+        {
+            directionFactor = 1f;
+        }
+        else if(rb.linearVelocity.x < 0)
+        {
+            directionFactor = -1f;
+        }
+        transform.localScale = new Vector3(directionFactor, transform.localScale.y,transform.localScale.z);
     }
     public void Walk()
     {
+        Debug.Log("Walk...");
         rb.linearVelocity = new Vector2(direction == 0 ? -moveSpeed : moveSpeed, rb.linearVelocityY);
+        Debug.Log("Walk... + rb.linearVelocity.x = " + rb.linearVelocity.x);
     }
     public void Idle()
     {
+        Debug.Log("Idle...");
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
     }
     public void OnCollisionEnter2D(Collision2D other)
