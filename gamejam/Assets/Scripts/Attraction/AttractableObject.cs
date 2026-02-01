@@ -34,10 +34,9 @@ public class AttractableObject : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             OnReachedAttraction();
-            Debug.Log("HeyX+" + rb.linearVelocity.x);
             return;
         }
-        Debug.Log("HeyX+" + rb.linearVelocity.x);
+        //Debug.Log("HeyX+" + rb.linearVelocity.x);
         float dir = Mathf.Sign(deltaX);
         rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
     }

@@ -13,9 +13,7 @@ public class MouseInputProvider : MonoBehaviour
     }
     private void OnInteraction(InputValue _)
     {
-        Debug.Log("there was a left click");
         Debug.Log(WorldPosition);
         Clicked?.Invoke();
-
     }
 }

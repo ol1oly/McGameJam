@@ -120,7 +120,7 @@ public class Villager : MonoBehaviour
     {
         //Debug.Log("Walk...");
         rb.linearVelocity = new Vector2(direction == 0 ? -moveSpeed : moveSpeed, rb.linearVelocityY);
-        Debug.Log("Walk... + rb.linearVelocity.x = " + rb.linearVelocity.x);
+        //Debug.Log("Walk... + rb.linearVelocity.x = " + rb.linearVelocity.x);
     }
     public void Idle()
     {
