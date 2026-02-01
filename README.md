@@ -1,2 +1,3 @@
 # McGameJam
-what the hell bro
+
+that was fun
