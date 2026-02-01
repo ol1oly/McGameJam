@@ -16,7 +16,7 @@ public class AttractionPoint : MonoBehaviour
     {
         if(hasActivated) return;
 
-        hasActivated= true;
+        // hasActivated= true;
         
         Debug.Log("Attraction activated at"+ gameObject.name);
 

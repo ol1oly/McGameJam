@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Villager : MonoBehaviour
@@ -18,6 +19,7 @@ public class Villager : MonoBehaviour
     }
     public void SetCurrentState(VillagerState state)
     {
+        if(currentState == VillagerState.Stun) return;
         currentState = state;
     }
     public void SetCurrentStateBack()
@@ -61,7 +63,10 @@ public class Villager : MonoBehaviour
     }
     void Update()
     {
-        if(currentState == VillagerState.Checking)
+        if(currentState == VillagerState.Stun)
+        {
+            Stun();
+        }else if(currentState == VillagerState.Checking)
         {
             Check();
             
@@ -79,14 +84,20 @@ public class Villager : MonoBehaviour
         }
         AnimationVillager();
     }
-
+    public void Stun()
+    {
+        rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        anim.SetTrigger("Stun");
+        StopAllCoroutines();
+    }
     public void RandomChoice()
     {
         
     }
     public void Check()
     {
-        Debug.Log("Checking...");
+        //Debug.Log("Checking...");
         //TODO: Anis coding part
     }
     private float directionFactor = 1f;
@@ -107,13 +118,13 @@ public class Villager : MonoBehaviour
     }
     public void Walk()
     {
-        Debug.Log("Walk...");
+        //Debug.Log("Walk...");
         rb.linearVelocity = new Vector2(direction == 0 ? -moveSpeed : moveSpeed, rb.linearVelocityY);
         Debug.Log("Walk... + rb.linearVelocity.x = " + rb.linearVelocity.x);
     }
     public void Idle()
     {
-        Debug.Log("Idle...");
+        //Debug.Log("Idle...");
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
     }
     public void OnCollisionEnter2D(Collision2D other)

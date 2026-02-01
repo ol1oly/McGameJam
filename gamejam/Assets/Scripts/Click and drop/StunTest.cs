@@ -20,7 +20,7 @@ public class StunTest : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Pickupable"))
+        if (collision.gameObject.CompareTag("Pickupable")||collision.gameObject.CompareTag("Guard"))
         {
             GetStunned();
         }
