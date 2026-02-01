@@ -18,6 +18,7 @@ public class Villager : MonoBehaviour
     private int direction = 1;
 
     private float directionFactor = 1f;
+    private bool start = false;
 
     void Start()
     {
@@ -26,11 +27,18 @@ public class Villager : MonoBehaviour
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        
+    }
+    
+    public void SetStartPatrol()
+    {
+        start = true;
         StartCoroutine(RandomMovementCoroutine());
     }
 
     void Update()
     {
+        if(!start) return;
         switch (currentState)
         {
             case VillagerState.Stun:
