@@ -22,6 +22,7 @@ public class HorseBehavior : MonoBehaviour
     [Header("Apple Detection")]
     public float appleDetectionRadius = 1f;
     public string appleTag = "Apple";
+    public Apple apple;
     
     [Header("Timing")]
     public float eatingDuration = 3f;   //aplpe eating time
@@ -61,7 +62,12 @@ public class HorseBehavior : MonoBehaviour
             case HorseState.Waiting:
                 // Count down timer
                 stateTimer -= Time.deltaTime;
-                
+
+                if (apple.IsFallen)
+                {
+                    ChangeState(HorseState.Eating);
+                    return;
+                }
                 if (stateTimer <= 0f)
                 {
                     //done eating/waiting, go home

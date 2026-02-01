@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FinalLevelLantern : MonoBehaviour
@@ -10,24 +11,24 @@ public class FinalLevelLantern : MonoBehaviour
 
     public void onPecked()
     {
-        if(hasSpilled) return;
+        if (hasSpilled) return;
 
         hasSpilled = true;
         Debug.Log("Lanter tipped! Oil spilling...");
 
-        if(oilSpillPrefab != null)
+        if (oilSpillPrefab != null)
         {
-            Vector2 spillPosition = (Vector2)transform.position + spillOffset;
-            Instantiate(oilSpillPrefab, spillPosition, Quaternion.identity);
+            oilSpillPrefab.SetActive(true);
         }
 
-        transform.rotation = Quaternion.Euler(0,0,90);
-
+        transform.rotation = Quaternion.Euler(0, 0, 90);
+        transform.position = new Vector2(52.5f, -8.65f);
         Collider2D col = GetComponent<Collider2D>();
 
-        if(col != null)
+        if (col != null)
         {
             col.enabled = false;
         }
     }
+
 }
