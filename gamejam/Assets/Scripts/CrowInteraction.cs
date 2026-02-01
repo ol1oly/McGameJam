@@ -6,10 +6,12 @@ public class CrowInteraction : MonoBehaviour
     private ClickHandler currentClickHandle;
     // [SerializeField] private MouseInputProvider mouse;
     private MouseInputProvider mouse;
+    private Animator anim;
 
     void Awake()
     {
         mouse = FindObjectOfType<MouseInputProvider>();
+        anim = GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -26,6 +28,10 @@ public class CrowInteraction : MonoBehaviour
     {
         currentInteractable?.OnClick();
         currentClickHandle?.HandleClick();
+        if (currentClickHandle)
+        {
+            anim.SetTrigger("Interact");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
