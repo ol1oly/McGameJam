@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Girl : MonoBehaviour
 {
-    public void NextLevel_2()
+    public void NextLevel()
     {
-        SceneManager.LoadScene("Scenes/Level2");
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 }

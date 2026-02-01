@@ -1,31 +1,3 @@
-// using UnityEngine;
-// public class CrowFollowMouse : MonoBehaviour
-// {
-//     [SerializeField] private float speed = 4f;
-
-//     private MouseInputProvider mouse;
-//     private Rigidbody2D rb;
-
-//     void Awake()
-//     {
-//         mouse = FindObjectOfType<MouseInputProvider>();
-//         rb = GetComponent<Rigidbody2D>();
-//     }
-
-//     void FixedUpdate()
-//     {
-//         Vector2 toMouse = mouse.WorldPosition - rb.position;
-
-//         if (toMouse.sqrMagnitude < 0.01f)
-//         {
-//             rb.linearVelocity = Vector2.zero;
-//             return;
-//         }
-
-//         Vector2 dir = toMouse.normalized;
-//         rb.linearVelocity = dir * speed;
-//     }
-// }
 using UnityEngine;
 
 public class CrowFollowMouse : MonoBehaviour
@@ -35,6 +7,7 @@ public class CrowFollowMouse : MonoBehaviour
     private MouseInputProvider mouse;
     private Rigidbody2D rb;
     private Collider2D col;
+
 
     void Awake()
     {
@@ -46,6 +19,14 @@ public class CrowFollowMouse : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 toMouse = mouse.WorldPosition - rb.position;
+
+        // Flip based on horizontal direction
+        if (toMouse.x != 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(toMouse.x); // -1 or 1
+            transform.localScale = scale;
+        }
 
         // Approximate collider "radius"
         float stopDistance = col.bounds.extents.magnitude;
