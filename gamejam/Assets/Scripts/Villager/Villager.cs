@@ -24,10 +24,8 @@ public class Villager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
+        currentState = VillagerState.Walking;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        
     }
     [SerializeField] private GameObject girl;
     public void End()
