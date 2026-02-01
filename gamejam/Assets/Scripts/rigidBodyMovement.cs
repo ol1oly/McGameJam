@@ -3,30 +3,54 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ForceBasedMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D body;
 
-    public float moveSpeed = 5f;         // force multiplier
-    public float maxVelocity = 8f;       // cap velocity
+    [Header("Movement")]
+    public float maxSpeed = 8f;
+    public float minimumSpeed = 1f;
+    public Vector2 movementDirection = Vector2.right;
 
-    Vector2 moveDirection;
+    [Header("Slowdown")]
+    public float slowdownMultiplier = 0.8f;
+    public int maxSlowdownStacks = 3;
 
+    private int slowdownZonesInside;
+    private float currentSpeed;
 
-
-    void Update()
+    void Awake()
     {
-        // Example: automatic movement to the right
-        moveDirection = Vector2.right; // can replace with AI/pathfinding or player input
+        body = GetComponent<Rigidbody2D>();
+        currentSpeed = maxSpeed;
+        slowdownZonesInside = 0;
     }
 
     void FixedUpdate()
     {
-        // Apply movement force
-        rb.AddForce(moveDirection * moveSpeed, ForceMode2D.Force);
+        body.linearVelocity = movementDirection * currentSpeed;
+    }
 
-        // Limit velocity without cancelling other forces
-        if (rb.linearVelocity.magnitude > maxVelocity)
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<PushBackZone>(out _))
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * maxVelocity;
+            slowdownZonesInside++;
+            RecalculateSpeed();
         }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.TryGetComponent<PushBackZone>(out _))
+        {
+            slowdownZonesInside = Mathf.Max(0, slowdownZonesInside - 1);
+            RecalculateSpeed();
+        }
+    }
+
+    private void RecalculateSpeed()
+    {
+        int appliedStacks = Mathf.Min(slowdownZonesInside, maxSlowdownStacks);
+        currentSpeed = maxSpeed * Mathf.Pow(slowdownMultiplier, appliedStacks);
+        currentSpeed = Mathf.Max(currentSpeed, minimumSpeed);
     }
 }
