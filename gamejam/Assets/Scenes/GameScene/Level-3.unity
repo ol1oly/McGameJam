@@ -2027,8 +2027,8 @@ GameObject:
   - component: {fileID: 581591369}
   - component: {fileID: 581591368}
   m_Layer: 0
-  m_Name: Nature_2
-  m_TagString: Untagged
+  m_Name: Lantern
+  m_TagString: FinalLevelLantern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2121,7 +2121,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClickHandler
   _clicked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 581591369}
+        m_TargetAssemblyTypeName: FinalLevelLantern, Assembly-CSharp
+        m_MethodName: onPecked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _isPickupable: 0
 --- !u!114 &581591369
 MonoBehaviour:
@@ -2167,7 +2179,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -4828,7 +4840,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.231662, y: 5.02}
+  m_Size: {x: 5.15, y: 5.63}
   m_EdgeRadius: 0
 --- !u!61 &1364210492
 BoxCollider2D:
@@ -7212,7 +7224,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.96037704, y: 1.34}
+  m_Size: {x: 1.81, y: 2.05}
   m_EdgeRadius: 0
 --- !u!212 &1961689495
 SpriteRenderer:
