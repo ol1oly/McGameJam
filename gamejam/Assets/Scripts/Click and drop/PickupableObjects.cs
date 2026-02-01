@@ -6,7 +6,7 @@ public class PickupableObjects : MonoBehaviour
    public bool isPickedUp = false;
 
    public void OnPickUp()
-    {
+{
         isPickedUp = true;
         Debug.Log(gameObject.name + "was picked up!");
 
@@ -32,6 +32,23 @@ public class PickupableObjects : MonoBehaviour
         if(rb!= null)
         {
             rb.simulated = true; //gravity physics
+        }
+
+
+        MoneyBag moneyBag = GetComponent<MoneyBag>();
+        if (moneyBag != null)
+        {
+            Invoke("CallMoneyBagDrop", 0.5f);
+            //moneyBag.OnDropped();
+        } //bad practive, cry about it whoever is reading in the future
+    }
+
+    void CallMoneyBagDrop()
+    {
+        MoneyBag moneyBag = GetComponent<MoneyBag>();
+        if(moneyBag != null)
+        {
+            moneyBag.OnDropped();
         }
     }
 }

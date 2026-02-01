@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 200551125334050174}
   - component: {fileID: 8302345280039568011}
-  - component: {fileID: 2731854493233132102}
   - component: {fileID: 5374305256693186539}
   - component: {fileID: 8487265850340113071}
   - component: {fileID: 6376318057336638591}
   - component: {fileID: 4820610666329438670}
+  - component: {fileID: 3552898780735759625}
+  - component: {fileID: 1656814866677343893}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Player
@@ -96,18 +97,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2731854493233132102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3024253363512690336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcef9ec54e03b1944a7a504beab977cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!61 &5374305256693186539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +131,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.043528795, y: 0.026117206}
+  m_Offset: {x: -0.014105201, y: -0.0120180845}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +141,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.062101, y: 1.992455}
+  m_Size: {x: 1.7512639, y: 1.5416689}
   m_EdgeRadius: 0
 --- !u!50 &8487265850340113071
 Rigidbody2D:
@@ -206,3 +195,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowFollowMouse
   speed: 4
+--- !u!95 &3552898780735759625
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024253363512690336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71a659b12c41baa4d9496c37619856a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1656814866677343893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024253363512690336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c9afb93e57bf1479ab447eee4dc0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
