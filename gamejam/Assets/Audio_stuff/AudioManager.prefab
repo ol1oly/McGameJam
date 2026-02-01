@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2329631889220765253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6871588898550724436}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6871588898550724436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329631889220765253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.4067955, y: -30.301613, z: -0.08837524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7891437035198858921}
+  - {fileID: 1726362826858119384}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7889438800267141979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726362826858119384}
+  - component: {fileID: 2518019863658914567}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1726362826858119384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889438800267141979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6871588898550724436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2518019863658914567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889438800267141979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068607ef69cf5ca408aaf96e81cb6b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  level1Music: level1
+  level2Music: level1
+  level3Music: level3
+--- !u!1 &8348222573520250324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7891437035198858921}
+  - component: {fileID: 4945207563950622200}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7891437035198858921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348222573520250324}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000047683716, y: 0.0000019073486, z: 0.08837524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6871588898550724436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4945207563950622200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348222573520250324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a791bca5c57594b9c512037e244127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: olivier::AudioManager
+  musicVolume: 0.2
+  audioSourcePrefab: {fileID: 6922738749489178237, guid: 069e7c3c75759614d84ed25d93e41c49, type: 3}
+  sounds:
+  - name: fire
+    clip: {fileID: 8300000, guid: 1f0fca4059f30984f87270a5d893cac1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    fadeInTime: 0
+  - name: level3
+    clip: {fileID: 8300000, guid: 505040d366ef8dc4cb9337ba1967cb09, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    fadeInTime: 10
+  - name: level1
+    clip: {fileID: 8300000, guid: 15a04fb6e340be34fb2425f38262f43c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    fadeInTime: 15
+  - name: snow1
+    clip: {fileID: 8300000, guid: bee810fe10ee1cc49bb91318b5abe998, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    fadeInTime: 1
+  - name: snow2
+    clip: {fileID: 8300000, guid: 7236ac34063a17543b31fe968df12c09, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    fadeInTime: 0
+  - name: snow3
+    clip: {fileID: 8300000, guid: 567eaf7052bec1f41ad8fdee5a40a4c6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    fadeInTime: 0
+  - name: snow4
+    clip: {fileID: 8300000, guid: 7500c8dd855bd57458f2e22b55c3fb8f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    fadeInTime: 0
