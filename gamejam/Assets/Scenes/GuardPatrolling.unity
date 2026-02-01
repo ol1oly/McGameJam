@@ -1200,7 +1200,7 @@ Transform:
   m_GameObject: {fileID: 2055526377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.52, y: -1.36, z: 0}
+  m_LocalPosition: {x: 0.3, y: -1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1220,7 +1220,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttractableObject
   moveSpeed: 2
   attractionTag: Attraction
+  lightLantern: {fileID: 2083937553}
   waitBeforeReturning: 2
+--- !u!1 &2083937553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7543700397443806265, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+  m_PrefabInstance: {fileID: 2732630297273959945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2083937560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083937553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7306cc379827014e9d07f5ddfdf566c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lantern
 --- !u!1 &2136724306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1376,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 730856053857177536, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3035190148685078315, guid: 1097a423b7c44a14ab0f9f1e2499cbee, type: 3}
+    - target: {fileID: 2406684554202564464, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3412049
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406684554202564464, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17060247
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406684554202564464, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406684554202564464, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787927745607199643, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: _clicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787927745607199643, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: _clicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2083937560}
+    - target: {fileID: 5787927745607199643, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: _clicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: InteractAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787927745607199643, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      propertyPath: _clicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Lantern, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6211005654617220157, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.65
@@ -1409,7 +1463,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7543700397443806265, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083937560}
   m_SourcePrefab: {fileID: 100100000, guid: a7baeee80173ae54180da80e2643d7a7, type: 3}
 --- !u!1001 &3122993331529069061
 PrefabInstance:
@@ -1528,6 +1585,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6337450158618626420, guid: eafd098ea103e3b458151a7fa77f5c3c, type: 3}
+    - target: {fileID: 8302345280039568011, guid: 6c125cd14b9b3354db214f9713267479, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

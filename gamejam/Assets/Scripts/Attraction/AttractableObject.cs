@@ -11,6 +11,7 @@ public class AttractableObject : MonoBehaviour
     private bool shouldReturnToOriginal = false;
     private Villager villager;
     private Rigidbody2D rb;
+    [SerializeField]private GameObject lightLantern;
     
     void Start()
     {
@@ -92,8 +93,6 @@ public class AttractableObject : MonoBehaviour
     private void OnReachedAttraction()
     {
         Debug.Log(gameObject.name + "reached the attraction point!");
-        //custom stuff can be added here lad
-        
         StopAttraction(true);
         villager.gameObject.GetComponent<Animator>().SetTrigger("Check");
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
@@ -102,5 +101,7 @@ public class AttractableObject : MonoBehaviour
     public void StartReturn()
     {
         shouldReturnToOriginal = true;
+        lightLantern.GetComponent<Animator>().SetTrigger("Relight");
+        lightLantern.GetComponent<Lantern>().SetClosed(false);
     }
 }
