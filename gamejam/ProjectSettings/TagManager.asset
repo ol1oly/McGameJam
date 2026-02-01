@@ -46,5 +46,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackDecor
+    uniqueID: 3735762629
+    locked: 0
+  - name: FrontDecor
+    uniqueID: 1889680417
+    locked: 0
   m_RenderingLayers:
   - Default
