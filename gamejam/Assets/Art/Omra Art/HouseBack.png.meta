@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: 16b2bc0d997797349b0ebcc3c3956ae6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6243461801991726234
+    second: HouseBack_0
+  - first:
+      213: 5376114868095432360
+    second: HouseBack_1
+  - first:
+      213: 2530400482472856675
+    second: HouseBack_2
+  - first:
+      213: 4046827838377991158
+    second: HouseBack_3
+  - first:
+      213: -5100646453376143956
+    second: HouseBack_4
+  - first:
+      213: -6894648638878875819
+    second: HouseBack_5
+  - first:
+      213: 5385312844420541301
+    second: HouseBack_6
+  - first:
+      213: 983557012023130854
+    second: HouseBack_7
+  - first:
+      213: 4209580975595262854
+    second: HouseBack_8
+  - first:
+      213: 6125023444498909780
+    second: HouseBack_9
+  - first:
+      213: -8418854930780221996
+    second: HouseBack_10
+  - first:
+      213: 8164260540289551277
+    second: HouseBack_11
+  - first:
+      213: -7727963512215896037
+    second: HouseBack_12
+  - first:
+      213: -7568019241126989714
+    second: HouseBack_13
+  - first:
+      213: -8911684192487826967
+    second: HouseBack_14
+  - first:
+      213: 7817868432973988148
+    second: HouseBack_15
+  - first:
+      213: -5452549203357055086
+    second: HouseBack_16
+  - first:
+      213: -4547300685628487749
+    second: HouseBack_17
+  - first:
+      213: 3818640756658702672
+    second: HouseBack_18
+  - first:
+      213: -6363565377688748290
+    second: HouseBack_19
+  - first:
+      213: -5234635641796043648
+    second: HouseBack_20
+  - first:
+      213: 2623830934100552382
+    second: HouseBack_21
+  - first:
+      213: -1565379327157196172
+    second: HouseBack_22
+  - first:
+      213: -5705901368913123464
+    second: HouseBack_23
+  - first:
+      213: -8896918248783430458
+    second: HouseBack_24
+  - first:
+      213: 5946209221170234571
+    second: HouseBack_25
+  - first:
+      213: -33363795181410314
+    second: HouseBack_26
+  - first:
+      213: 3508591513933879473
+    second: HouseBack_27
+  - first:
+      213: 5372989947613120883
+    second: HouseBack_28
+  - first:
+      213: -1145377635412600131
+    second: HouseBack_29
+  - first:
+      213: -6948604961805880707
+    second: HouseBack_30
+  - first:
+      213: 4070208138131294348
+    second: HouseBack_31
+  - first:
+      213: -6565539784575231005
+    second: HouseBack_32
+  - first:
+      213: 5040818834742461449
+    second: HouseBack_33
+  - first:
+      213: -153594410124215750
+    second: HouseBack_34
+  - first:
+      213: 4008999706987739980
+    second: HouseBack_35
+  - first:
+      213: -3592215575389530106
+    second: HouseBack_36
+  - first:
+      213: 3745001047239072358
+    second: HouseBack_37
+  - first:
+      213: 6043700635332965742
+    second: HouseBack_38
+  - first:
+      213: -1201986957150029565
+    second: HouseBack_39
+  - first:
+      213: -1867496662285889244
+    second: HouseBack_40
+  - first:
+      213: -74217011157189434
+    second: HouseBack_41
+  - first:
+      213: 2342433199042622882
+    second: HouseBack_42
+  - first:
+      213: 6622308490250125435
+    second: HouseBack_43
+  - first:
+      213: 4266839848014608426
+    second: HouseBack_44
+  - first:
+      213: -3054028027283396181
+    second: HouseBack_45
+  - first:
+      213: -8717424784116326172
+    second: HouseBack_46
+  - first:
+      213: -925250482607553522
+    second: HouseBack_47
+  - first:
+      213: 1760115237123256357
+    second: HouseBack_48
+  - first:
+      213: 4010979439622617514
+    second: HouseBack_49
+  - first:
+      213: 2457666324929256899
+    second: HouseBack_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HouseBack_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 128
+        width: 2109
+        height: 3475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b10930294ca59a0800000000000000
+      internalID: -6243461801991726234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseBack_1
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 124
+        width: 1864
+        height: 3466
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a636881dfbcb9a40800000000000000
+      internalID: 5376114868095432360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseBack_2
+      rect:
+        serializedVersion: 2
+        x: 4404
+        y: 53
+        width: 1507
+        height: 3558
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c854905d9cd1320800000000000000
+      internalID: 2530400482472856675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: da745eb6b594794428cb93ccf4e640e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HouseBack_0: -6243461801991726234
+      HouseBack_1: 5376114868095432360
+      HouseBack_10: -8418854930780221996
+      HouseBack_11: 8164260540289551277
+      HouseBack_12: -7727963512215896037
+      HouseBack_13: -7568019241126989714
+      HouseBack_14: -8911684192487826967
+      HouseBack_15: 7817868432973988148
+      HouseBack_16: -5452549203357055086
+      HouseBack_17: -4547300685628487749
+      HouseBack_18: 3818640756658702672
+      HouseBack_19: -6363565377688748290
+      HouseBack_2: 2530400482472856675
+      HouseBack_20: -5234635641796043648
+      HouseBack_21: 2623830934100552382
+      HouseBack_22: -1565379327157196172
+      HouseBack_23: -5705901368913123464
+      HouseBack_24: -8896918248783430458
+      HouseBack_25: 5946209221170234571
+      HouseBack_26: -33363795181410314
+      HouseBack_27: 3508591513933879473
+      HouseBack_28: 5372989947613120883
+      HouseBack_29: -1145377635412600131
+      HouseBack_3: 4046827838377991158
+      HouseBack_30: -6948604961805880707
+      HouseBack_31: 4070208138131294348
+      HouseBack_32: -6565539784575231005
+      HouseBack_33: 5040818834742461449
+      HouseBack_34: -153594410124215750
+      HouseBack_35: 4008999706987739980
+      HouseBack_36: -3592215575389530106
+      HouseBack_37: 3745001047239072358
+      HouseBack_38: 6043700635332965742
+      HouseBack_39: -1201986957150029565
+      HouseBack_4: -5100646453376143956
+      HouseBack_40: -1867496662285889244
+      HouseBack_41: -74217011157189434
+      HouseBack_42: 2342433199042622882
+      HouseBack_43: 6622308490250125435
+      HouseBack_44: 4266839848014608426
+      HouseBack_45: -3054028027283396181
+      HouseBack_46: -8717424784116326172
+      HouseBack_47: -925250482607553522
+      HouseBack_48: 1760115237123256357
+      HouseBack_49: 4010979439622617514
+      HouseBack_5: -6894648638878875819
+      HouseBack_50: 2457666324929256899
+      HouseBack_6: 5385312844420541301
+      HouseBack_7: 983557012023130854
+      HouseBack_8: 4209580975595262854
+      HouseBack_9: 6125023444498909780
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
