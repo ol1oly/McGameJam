@@ -86,16 +86,75 @@ public class AttractableObject : MonoBehaviour
     }
     private void Returned()
     {
-        villager.SetCurrentStateBack();
+        if(villager != null)
+        {
+            villager.SetCurrentStateBack();
+        }
+        else
+        {
+            MoneyBag money = GetComponentInChildren<MoneyBag>();
+            if(money != null)
+            {
+                Vector2 dropPosition = (Vector2)transform.position - new Vector2(1f,0f); //drop to the right 
+                //to change direction prolly just change sign of the new vector (+ or -)
+                money.GetPlacedByGuard(dropPosition);
+            }
+        }
+        
         shouldReturnToOriginal = false;
     }
     private void OnReachedAttraction()
     {
         Debug.Log(gameObject.name + "reached the attraction point!");
-        StopAttraction(true);
-        villager.gameObject.GetComponent<Animator>().SetTrigger("Check");
-        rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+       if(villager != null)
+        {
+            villager.gameObject.GetComponent<Animator>().SetTrigger("Check");
+            //rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            //this was here
+
+            //might be ai hallucination this stuff figure it out level 1
+            lightLantern.GetComponent<Animator>().SetTrigger("Relight");
+            lightLantern.GetComponent<Lantern>().SetClosed(false);
+            StopAttraction(true);
+        }
+        else
+        {
+            MoneyBag money = attractionTarget?.GetComponent<MoneyBag>();
+            if(money != null)
+            {
+                Invoke("PickupMoney", 1f); //wait for a second
+            }
+            else
+            {
+                StopAttraction(false); //and maybe adding return logic obv later but yeah doesnt matter for me rn
+            }
+            
+        }
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        
     }
+    private void PickupMoney()
+    {
+        if(attractionTarget == null) return;
+
+        Debug.Log("Guard picking up money...");
+        MoneyBag money = attractionTarget.GetComponent<MoneyBag>();
+
+        if(money != null)
+        {
+            money.GetPickedUpByGuard(transform);
+        }
+
+        Invoke("ReturnHomeWithMoney",1f);//gets held a sec
+    }
+
+    private void ReturnHomeWithMoney()
+    {
+        Debug.Log("Guard returning home with money");
+        StopAttraction(false);
+        shouldReturnToOriginal = true;
+    }
+
     [SerializeField] private float waitBeforeReturning = 2f;
     public void StartReturn()
     {

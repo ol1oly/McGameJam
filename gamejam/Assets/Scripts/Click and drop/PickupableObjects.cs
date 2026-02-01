@@ -31,24 +31,22 @@ public class PickupableObjects : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if(rb!= null)
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
             rb.simulated = true; //gravity physics
+            
         }
 
+        Invoke("TriggerSpecialBehavior", 0.3f);
 
+    }
+
+    void TriggerSpecialBehavior()
+    {
         MoneyBag moneyBag = GetComponent<MoneyBag>();
         if (moneyBag != null)
         {
-            Invoke("CallMoneyBagDrop", 0.5f);
-            //moneyBag.OnDropped();
-        } //bad practive, cry about it whoever is reading in the future
-    }
-
-    void CallMoneyBagDrop()
-    {
-        MoneyBag moneyBag = GetComponent<MoneyBag>();
-        if(moneyBag != null)
-        {
+            //Invoke("CallMoneyBagDrop", 0.5f);
             moneyBag.OnDropped();
-        }
+        } //bad practive, cry about it whoever is reading in the future
     }
 }

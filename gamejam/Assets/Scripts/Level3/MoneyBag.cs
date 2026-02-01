@@ -8,11 +8,15 @@ public class MoneyBag : MonoBehaviour
     public float attractionRadius = 15f;
     private bool hasBeenActivated = false;
 
+    private bool isBeingHeld = false;
+    public UnityEngine.Vector2 holdOffset = new UnityEngine.Vector2(0.5f, 0.3f);
+
     public void OnDropped()
     {
-        if(hasBeenActivated) return;
+        if(hasBeenActivated && !isBeingHeld) return;
 
         hasBeenActivated = true;
+        isBeingHeld = false;
 
         Debug.Log("💰 Money bag dropped! Attracting greedy guard🤑🤑🤑...");//type shit
 
@@ -30,6 +34,56 @@ public class MoneyBag : MonoBehaviour
         }
     }
 
+
+    public void GetPickedUpByGuard(Transform guard)
+    {
+        isBeingHeld = true;
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        if(rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.linearVelocity = UnityEngine.Vector2.zero; //was og velocity but obsolete wada wada wada
+        }
+
+
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        transform.SetParent(guard);
+        transform.localPosition = holdOffset;
+
+        Debug.Log("Money picked up by guard!🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑🤑");
+
+    }
+
+    public void GetPlacedByGuard(UnityEngine.Vector2 position)
+    {
+        isBeingHeld = false;
+        hasBeenActivated = false; //reset so attraction can be on again 
+
+        transform.SetParent(null);
+        transform.position = position;
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        if(rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach(var col in colliders)
+        {
+            col.enabled = true;
+        }
+
+        Debug.Log("Money placed down by guard - can be picked up again!");
+    }
 
     private GameObject FindClosestInRadius(GameObject[] objects)
     {
