@@ -1,8 +1,10 @@
 
 using UnityEngine;
 
-[System.Serializable]
-public class Sound
+
+
+[CreateAssetMenu(fileName = "NewSound", menuName = "Audio/Sound")]
+public class Sound : ScriptableObject
 {
     public string name;
     public AudioClip clip;
@@ -17,4 +19,6 @@ public class Sound
 
     [Range(0f, 30f)]
     public float fadeInTime = 0f;
+
+    public bool playOneShot = true;
 }
