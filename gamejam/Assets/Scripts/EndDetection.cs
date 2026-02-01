@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(Collider2D))]
@@ -22,11 +23,13 @@ public class EndDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("ennemy"))
         {
             Debug.Log("you lost");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (collision.gameObject.CompareTag("success"))
         {
-            Debug.Log("you won");
+            Debug.Log("you won"); // level-3
+            SceneManager.LoadScene("level-3");
         }
 
     }

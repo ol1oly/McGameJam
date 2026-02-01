@@ -6,12 +6,13 @@ public class Level2CrowMovement : MonoBehaviour
 
     [SerializeField] private Transform imageOffset;
 
+    SpriteRenderer[] renderers;
 
     private Animator anim;
     private SpriteRenderer sr;
 
     //private MouseInputProvider mouse;
-    void Awake()
+    void Awake()//
     {
         //mouse = FindObjectOfType<MouseInputProvider>();
     }
@@ -20,6 +21,7 @@ public class Level2CrowMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        renderers = GetComponentsInChildren<SpriteRenderer>();
     }
     void LateUpdate()
     {
@@ -52,7 +54,16 @@ public class Level2CrowMovement : MonoBehaviour
 
         Vector2 targetPosition = mouseWorldPosition - ((Vector2)transform.position - ((Vector2)transform.position - (Vector2)imageOffset.position));
 
-        if (Mathf.Abs(targetPosition.x) > 0.05) sr.flipX = targetPosition.x < 0;
+        if (Mathf.Abs(targetPosition.x) > 0.05)
+        {
+
+            bool flip = targetPosition.x < 0;
+
+            foreach (var sr in renderers)
+            {
+                sr.flipX = flip;
+            }
+        }
 
         // Smoothly move crow toward target
         transform.position += Vector3.MoveTowards(
