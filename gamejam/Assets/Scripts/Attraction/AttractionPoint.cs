@@ -12,12 +12,12 @@ public class AttractionPoint : MonoBehaviour
 
     //can always change to be more of a "water got dropped near means attraction because its near" and nothing else
 
-     public void Activate()//gets called when obj is dropped or wtv
+    public void Activate()//gets called when obj is dropped or wtv
     {
         if(hasActivated) return;
 
         hasActivated= true;
-
+        
         Debug.Log("Attraction activated at"+ gameObject.name);
 
         GameObject[] attractables = GameObject.FindGameObjectsWithTag(attractableTag);

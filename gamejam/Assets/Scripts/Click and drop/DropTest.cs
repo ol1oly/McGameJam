@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class DropTest : MonoBehaviour
 {
+    [SerializeField] private bool isTesting = false;
     public GameObject objectToDrop; //drag in here 
     
     void Update()
@@ -14,13 +15,13 @@ public class DropTest : MonoBehaviour
         }
         */
 
-           if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+           if (isTesting && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             TestDrop();
         }
     }
     
-    void TestDrop()
+    public void TestDrop()
     {
         if (objectToDrop != null)
         {

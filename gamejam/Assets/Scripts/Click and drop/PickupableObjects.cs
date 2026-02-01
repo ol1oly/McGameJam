@@ -6,7 +6,7 @@ public class PickupableObjects : MonoBehaviour
    public bool isPickedUp = false;
 
    public void OnPickUp()
-    {
+{
         isPickedUp = true;
         Debug.Log(gameObject.name + "was picked up!");
 
