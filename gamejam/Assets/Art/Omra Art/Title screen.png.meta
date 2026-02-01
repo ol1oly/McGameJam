@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e723825e6d7d6d540ab03c6ac20a523f
+guid: 721674ac8059ec94599840ecd4fb1e98
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7672759098259192623
-    second: Horse_0
-  - first:
-      213: 3604182692263377810
-    second: Horse_1
+      213: -2646632210091966348
+    second: Title screen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,84 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Horse_0
+      name: Title screen_0
       rect:
         serializedVersion: 2
-        x: 566
-        y: 401
-        width: 760
-        height: 629
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f2bb2e27fbd1b7a60800000000000000
-      internalID: 7672759098259192623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Horse_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 79
-        width: 1275
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29b38f51011a40230800000000000000
-      internalID: 3604182692263377810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Horse_2
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 401
-        width: 411
-        height: 622
+        x: 0
+        y: 0
+        width: 1600
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0ce95f7a126c9f844a5eca350214f58c
-      internalID: -999164907
+      spriteID: 4708c520706454bd0800000000000000
+      internalID: -2646632210091966348
       vertices: []
       indices: 
       edges: []
@@ -185,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b38cfbeccce1c524ea18e3eaed291d65
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -195,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Horse_0: 7672759098259192623
-      Horse_1: 3604182692263377810
-      Horse_2: -999164907
+      Title screen_0: -2646632210091966348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
