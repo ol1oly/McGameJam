@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: c087bffc4b4b1e44997bba8074085ce8
+guid: cb293aaa1984887418ae8cf51dbe5864
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3887312741084805919
-    second: IMG_1859_0
-  - first:
-      213: 6594568099642868723
-    second: IMG_1859_1
-  - first:
-      213: 8186670427739989493
-    second: IMG_1859_2
-  - first:
-      213: 7221718360071664850
-    second: IMG_1859_3
+      213: 6600961554629861752
+    second: IMG_1868_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_1859_0
+      name: IMG_1868_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 2360
+        height: 1640
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e44ac868ad7d0ac0800000000000000
-      internalID: -3887312741084805919
+      spriteID: 87129bf7f835b9b50800000000000000
+      internalID: 6600961554629861752
       vertices: []
       indices: 
       edges: []
@@ -134,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ec5f13e97f9f61143a4ff0e3c0aa3ec1
+    spriteID: 4f9e97ad57818f044af6b9506bcba4d7
     internalID: 0
     vertices: []
     indices: 
@@ -144,9 +135,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1920.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2360.0,"y":1640.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      IMG_1859_0: -3887312741084805919
+      IMG_1868_0: 6600961554629861752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
