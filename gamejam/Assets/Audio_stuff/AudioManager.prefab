@@ -128,66 +128,7 @@ MonoBehaviour:
   musicVolume: 0.2
   audioSourcePrefab: {fileID: 6922738749489178237, guid: 069e7c3c75759614d84ed25d93e41c49, type: 3}
   sounds:
-  - name: fire
-    clip: {fileID: 8300000, guid: a1272fe985b13c04eb617d1fb3ab955e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    fadeInTime: 0
-    playOneShot: 0
-  - name: level3
-    clip: {fileID: 8300000, guid: 505040d366ef8dc4cb9337ba1967cb09, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    fadeInTime: 10
-    playOneShot: 0
-  - name: level1
-    clip: {fileID: 8300000, guid: 15a04fb6e340be34fb2425f38262f43c, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    fadeInTime: 15
-    playOneShot: 0
-  - name: snow1
-    clip: {fileID: 8300000, guid: bee810fe10ee1cc49bb91318b5abe998, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 1
-    playOneShot: 1
-  - name: snow2
-    clip: {fileID: 8300000, guid: 7236ac34063a17543b31fe968df12c09, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 0
-    playOneShot: 1
-  - name: snow3
-    clip: {fileID: 8300000, guid: 567eaf7052bec1f41ad8fdee5a40a4c6, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 0
-    playOneShot: 1
-  - name: snow4
-    clip: {fileID: 8300000, guid: 7500c8dd855bd57458f2e22b55c3fb8f, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 0
-    playOneShot: 1
-  - name: level2
-    clip: {fileID: 8300000, guid: 44a10924e6cb2ca4384dff240c4dbddf, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 0
-    playOneShot: 0
-  - name: emergency
-    clip: {fileID: 8300000, guid: 35384311bc94d09489e93911baa4490b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    fadeInTime: 0
-    playOneShot: 0
+  - {fileID: 11400000, guid: e6039028fab1d544bb4f2a5bde9d5d9c, type: 2}
+  - {fileID: 11400000, guid: 8d520801783fb284bb1a914816863a2a, type: 2}
+  - {fileID: 11400000, guid: 3ba2622e22c12284d9f869e35e5c7b90, type: 2}
+  - {fileID: 11400000, guid: 6949056ae6b3da84e85e1d25d68b91f9, type: 2}

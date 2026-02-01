@@ -8,7 +8,7 @@ public class PushBackZone : MonoBehaviour
     public float velocityMultiplier = 1f;
     public float maxForce = 20f;
 
-    public float pushScalePlayer = 3f;         // force applied to other rigidbody
+    public float slowDownScale = 0.8f;         // force applied to other rigidbody
 
     public Rigidbody2D own;                 // your own Rigidbody2D
 
@@ -29,7 +29,7 @@ public class PushBackZone : MonoBehaviour
         own.AddForce(pushDirection * forceAmount, modeBox);
 
 
-        rb.AddForce(Vector2.left * pushScalePlayer, modePlayer);
+        rb.AddForce(Vector2.left * slowDownScale, modePlayer);
     }
 
 }

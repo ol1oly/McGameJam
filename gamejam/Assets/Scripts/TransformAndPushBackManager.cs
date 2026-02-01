@@ -85,7 +85,7 @@ public class TransformAndPushBackManager : MonoBehaviour
                 zone.upwardComponent = upwardComponent;
                 zone.velocityMultiplier = velocityMultiplier;
                 zone.maxForce = maxForce;
-                zone.pushScalePlayer = forceOnOther;
+                zone.slowDownScale = forceOnOther;
                 zone.modeBox = modeBox;
                 zone.modePlayer = modePlayer;
             }
