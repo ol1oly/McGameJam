@@ -29,6 +29,11 @@ public class Villager : MonoBehaviour
 
         
     }
+    [SerializeField] private GameObject girl;
+    public void End()
+    {
+        girl.SetActive(true);
+    }
     
     public void SetStartPatrol()
     {
@@ -145,13 +150,15 @@ public class Villager : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(0f, rb.linearVelocityY);
     }
-
+    private bool isStun = false;
     private void Stun()
     {
+        if(isStun) return;
         rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         anim.SetTrigger("Stun");
         StopAllCoroutines();
+        isStun = true;
     }
 
     private void Check()

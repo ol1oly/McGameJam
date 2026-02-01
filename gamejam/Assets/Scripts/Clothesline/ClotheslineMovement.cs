@@ -25,6 +25,7 @@ public class ClotheslineMovement : MonoBehaviour, IClickable
     public void OnClick()
     {
         Debug.Log("OnCLick");
+        if(clothing==null) return;
         // click on right pulley to move clothes to the right
         if (isRight)
         {
