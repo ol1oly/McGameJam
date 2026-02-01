@@ -53,4 +53,10 @@ public class ForceBasedMovement : MonoBehaviour
         currentSpeed = maxSpeed * Mathf.Pow(slowdownMultiplier, appliedStacks);
         currentSpeed = Mathf.Max(currentSpeed, minimumSpeed);
     }
+
+
+    public void playStepSound()
+    {
+        AudioManager.instance.playRandomSound(AudioManager.instance.Stepsounds);
+    }
 }

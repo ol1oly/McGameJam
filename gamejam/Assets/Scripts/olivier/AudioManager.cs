@@ -19,7 +19,14 @@ public class AudioManager : MonoBehaviour
     private List<AudioSource> audioSources = new List<AudioSource>();
 
 
-    [SerializeField] private List<Sound> sounds = new List<Sound>();
+
+
+    [SerializeField] public List<Sound> sounds = new List<Sound>();
+    [SerializeField] public List<Sound> Cawksounds = new List<Sound>();
+
+    [SerializeField] public List<Sound> flapsounds = new List<Sound>();
+
+    [SerializeField] public List<Sound> Stepsounds = new List<Sound>();
 
     private void Awake()
     {
@@ -36,10 +43,6 @@ public class AudioManager : MonoBehaviour
 
         }
         else Destroy(gameObject);
-
-
-
-
     }
 
     /// <summary>
@@ -69,7 +72,8 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(string clipName)
     {
         //if(clipName.Equals("PlayerDeath")) battleTheme.mute = true;
-        Sound clip = sounds.FirstOrDefault(s => s.name.Contains(clipName));
+        Sound clip = sounds.FirstOrDefault(s => s.name.Equals(clipName));
+
         if (clip != null)
         {
 
@@ -93,6 +97,8 @@ public class AudioManager : MonoBehaviour
 
 
 
+
+
     public void subscribe()
     {
 
@@ -102,6 +108,34 @@ public class AudioManager : MonoBehaviour
     {
 
     }
+    public void playRandomSound(List<Sound> sounds)
+    {
+        if (sounds == null || sounds.Count == 0) return;
+
+        Sound clip = sounds[Random.Range(0, sounds.Count)];
+
+        if (clip != null)
+        {
+
+            AudioSource source = GetAvailableSource();
+            if (clip.playOneShot)
+            {
+                source.PlayOneShot(clip.clip, clip.volume);
+                return;
+            }
+
+            source.loop = clip.loop;
+            source.clip = clip.clip;
+            source.Play();
+            source.volume = 0;
+            StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
+            return;
+
+        }
+
+    }
+
+
 
 
 

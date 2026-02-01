@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b8c9b9587a24ff49b9a8fc43e04b618, type: 3}
-  m_Name: level1
+  m_Name: flap3
   m_EditorClassIdentifier: olivier::Sound
-  name: level1
-  clip: {fileID: 8300000, guid: 15a04fb6e340be34fb2425f38262f43c, type: 3}
-  volume: 0.4
+  name: flap3
+  clip: {fileID: 8300000, guid: 0d8bd016adea4d04992a3fce81cac0cb, type: 3}
+  volume: 0.05
   pitch: 1
-  loop: 1
-  fadeInTime: 10
-  playOneShot: 0
+  loop: 0
+  fadeInTime: 0
+  playOneShot: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: olivier::Sound
   name: level3
   clip: {fileID: 8300000, guid: 505040d366ef8dc4cb9337ba1967cb09, type: 3}
-  volume: 1
+  volume: 0.4
   pitch: 1
   loop: 1
   fadeInTime: 9
