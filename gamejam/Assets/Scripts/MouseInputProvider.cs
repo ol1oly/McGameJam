@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class MouseInputProvider : MonoBehaviour
 {
-    public Vector2 WorldPosition {get; private set;}
+    public Vector2 WorldPosition { get; private set; }
     public event Action Clicked;
 
     private void OnMousePosition(InputValue value)
@@ -13,6 +13,9 @@ public class MouseInputProvider : MonoBehaviour
     }
     private void OnInteraction(InputValue _)
     {
+        Debug.Log("there was a left click");
+        Debug.Log(WorldPosition);
         Clicked?.Invoke();
+
     }
 }

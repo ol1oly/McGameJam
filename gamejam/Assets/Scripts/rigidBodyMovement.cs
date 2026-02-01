@@ -10,6 +10,8 @@ public class ForceBasedMovement : MonoBehaviour
 
     Vector2 moveDirection;
 
+
+
     void Update()
     {
         // Example: automatic movement to the right
