@@ -12,7 +12,7 @@ public class Level2CrowMovement : MonoBehaviour
     private SpriteRenderer sr;
 
     //private MouseInputProvider mouse;
-    void Awake()
+    void Awake()//
     {
         //mouse = FindObjectOfType<MouseInputProvider>();
     }
