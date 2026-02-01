@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class AudioManager : MonoBehaviour
 {
@@ -71,20 +72,21 @@ public class AudioManager : MonoBehaviour
         Sound clip = sounds.FirstOrDefault(s => s.name.Contains(clipName));
         if (clip != null)
         {
-            AudioSource source = GetAvailableSource();
 
-            if (clip.loop)
+            AudioSource source = GetAvailableSource();
+            if (clip.playOneShot)
             {
-                source.loop = true;
-                source.clip = clip.clip;
-                source.Play();
-                source.volume = 0;
-                StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
+                source.PlayOneShot(clip.clip, clip.volume);
                 return;
             }
-            source.PlayOneShot(clip.clip);
+
+            source.loop = clip.loop;
+            source.clip = clip.clip;
+            source.Play();
             source.volume = 0;
             StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
+            return;
+
         }
     }
 
@@ -150,4 +152,19 @@ public class AudioManager : MonoBehaviour
         yield return StartCoroutine(FadeAudio(source, duration, 0f));
         source.Stop();
     }
+
+
+    public float GetSoundLength(string name)
+    {
+        // Find the sound in your sounds list
+        Sound sound = sounds.FirstOrDefault(s => s.name == name);
+        if (sound != null && sound.clip != null)
+        {
+            return sound.clip.length; // duration in seconds
+        }
+
+        return -1f; // not found
+    }
+
+
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class MusicManager : MonoBehaviour
 
     public string level1Music;
     public string level2Music;
+    public string playEmergencyLoop2;
     public string level3Music;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +26,7 @@ public class MusicManager : MonoBehaviour
         else if (sceneName.Contains("2"))
         {
             manager.PlaySound(level2Music);
+            StartCoroutine(playEmergencyLoop(manager.GetSoundLength(level2Music) - 1));
         }
         else
         {
@@ -34,6 +37,14 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    IEnumerator playEmergencyLoop(float time)
+    {
+        yield return new WaitForSeconds(time);
+        manager.PlaySound(playEmergencyLoop2);
+
 
     }
 }
