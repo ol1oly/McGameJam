@@ -45,7 +45,7 @@ public class FlammableObject : MonoBehaviour
 
         isOnFire = true;
 
-        Debug.Log(gameObject.name+" caugh on FIRE !!!");
+        Debug.Log(gameObject.name + " caugh on FIRE !!!");
 
         if(firePrefab != null)
         {
@@ -61,13 +61,11 @@ public class FlammableObject : MonoBehaviour
             }
         }
 
-        //whatever it may be but basically the implementation of win
-        /*
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        LevelManager levelManager = FindFirstObjectByType<LevelManager>();
         if(levelManager != null)
         {
-            levelManager.OnFireStarted
-        }*/
+            levelManager.OnFireStarted();
+        }
     }
 
     void OnDrawGizmosSelected()
