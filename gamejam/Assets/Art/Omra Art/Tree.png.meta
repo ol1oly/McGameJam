@@ -383,7 +383,7 @@ TextureImporter:
         width: 96
         height: 134
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -392,6 +392,28 @@ TextureImporter:
       bones: []
       spriteID: 8e004dac57436d84bb8cd97c2b3b48fd
       internalID: -1089773682390131457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_6
+      rect:
+        serializedVersion: 2
+        x: 12783
+        y: 3774
+        width: 1665
+        height: 1082
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1105061b311294642839a27eb984ee1e
+      internalID: 3690649294209121615
       vertices: []
       indices: 
       edges: []
