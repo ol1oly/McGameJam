@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,13 +10,8 @@ public class StopCamera : MonoBehaviour
     [SerializeField] private GameObject Witch;
 
     [SerializeField] private Transform witchPositionCamera;
-    [SerializeField] private float followSpeed = 5f;
+
     private SpriteRenderer sr;
-
-    private bool reachedPosition = false;
-
-
-    private bool cameraAttached = true;
     private Vector3 offset;
 
 
@@ -28,42 +24,44 @@ public class StopCamera : MonoBehaviour
 
         StartCoroutine(HandleCameraMovement());
     }
+    private enum CameraFollowState
+    {
+        REACHED_END,
+        FOLLOWING_WITCH,
+        START_LEVEL
+    }
+
 
     IEnumerator HandleCameraMovement()
     {
+        CameraFollowState state = CameraFollowState.START_LEVEL;
 
-        bool following = false;
 
         while (true)
         {
-            if (!following)
+            if (state == CameraFollowState.START_LEVEL)
             {
-                // Start following if Witch enters the trigger
                 if (Witch != null && witchPositionCamera.position.x <= Witch.transform.position.x)
                 {
-                    following = true;
+                    state = CameraFollowState.FOLLOWING_WITCH;
                 }
             }
-            else
+            else if (state == CameraFollowState.FOLLOWING_WITCH)
             {
-                // Follow the Witch
                 FollowWitch();
-
-                // Stop following when sprite becomes visible
                 if (sr.isVisible)
                 {
-                    following = false;
+                    state = CameraFollowState.REACHED_END;
                 }
+
             }
+
 
             yield return null;
         }
     }
-
-
     private void FollowWitch()
     {
-        Vector3 targetPos = Witch.transform.position + offset;
         toStop.transform.position = Witch.transform.position + offset;
 
     }
