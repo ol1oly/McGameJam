@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 using System.Collections;
+using UnityEditor;
 
 public class AudioManager : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string clipName)
     {
-        //if(clipName.Equals("PlayerDeath")) battleTheme.mute = true;
+
         Sound clip = sounds.FirstOrDefault(s => s.name.Equals(clipName));
 
         if (clip != null)
@@ -88,6 +89,33 @@ public class AudioManager : MonoBehaviour
             source.Play();
             source.volume = 0;
             StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
+            return;
+
+        }
+    }
+
+    public void PlaySound(Sound sound)
+    {
+        if (sound == null)
+        {
+            Debug.LogError("the sound is null");
+        }
+
+        if (sound != null)
+        {
+
+            AudioSource source = GetAvailableSource();
+            if (sound.playOneShot)
+            {
+                source.PlayOneShot(sound.clip, sound.volume);
+                return;
+            }
+
+            source.loop = sound.loop;
+            source.clip = sound.clip;
+            source.Play();
+            source.volume = 0;
+            StartCoroutine(FadeAudio(source, sound.fadeInTime, sound.volume));
             return;
 
         }

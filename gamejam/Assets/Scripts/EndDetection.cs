@@ -22,13 +22,13 @@ public class EndDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ennemy"))
         {
-            Debug.Log("you lost");
+            Debug.Log("you lost in: " + Time.timeSinceLevelLoad + " seconds");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (collision.gameObject.CompareTag("success"))
         {
-            Debug.Log("you won"); // level-3
+            Debug.Log("you won in: " + Time.timeSinceLevelLoad + " seconds");
             SceneManager.LoadScene("level-3");
         }
 

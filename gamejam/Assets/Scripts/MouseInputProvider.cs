@@ -10,11 +10,11 @@ public class MouseInputProvider : MonoBehaviour
     private void OnMousePosition(InputValue value)
     {
         WorldPosition = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
-        Debug.Log("changed position");
+        //Debug.Log("changed position");
     }
     private void OnInteraction(InputValue _)
     {
-        Debug.Log(WorldPosition);
+        //Debug.Log(WorldPosition);
         Clicked?.Invoke();
     }
 }

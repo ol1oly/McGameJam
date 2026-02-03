@@ -20,8 +20,10 @@ public class ForceBasedMovement : MonoBehaviour
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+    }
+    void Start()
+    {
         currentSpeed = maxSpeed;
-        slowdownZonesInside = 0;
     }
 
     void FixedUpdate()
@@ -59,4 +61,6 @@ public class ForceBasedMovement : MonoBehaviour
     {
         AudioManager.instance.playRandomSound(AudioManager.instance.Stepsounds);
     }
+
+    public float getCurrentSpeed() { return currentSpeed; }
 }
