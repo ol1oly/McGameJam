@@ -22,15 +22,18 @@ public class Lantern : MonoBehaviour
   private bool isClosed = false;
     public void InteractAnim()
     {
+        Debug.Log("Interact Light");
         if (!isClosed)
         {
-            anim.SetTrigger("Interact");
+            Debug.LogWarning("Light up");
             isClosed = true;
+            anim.SetTrigger("Interact");
         }
         
     }
     public void SetClosed(bool closed)
     {
+        Debug.Log("is closed = "+closed);
         isClosed = closed;
     }
 }

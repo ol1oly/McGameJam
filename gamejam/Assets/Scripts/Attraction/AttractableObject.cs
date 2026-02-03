@@ -114,8 +114,9 @@ public class AttractableObject : MonoBehaviour
             //this was here
 
             //might be ai hallucination this stuff figure it out level 1
-            lightLantern.GetComponent<Animator>().SetTrigger("Relight");
             lightLantern.GetComponent<Lantern>().SetClosed(false);
+            lightLantern.GetComponent<Animator>().SetTrigger("Relight");
+            
             StopAttraction(true);
         }
         else
