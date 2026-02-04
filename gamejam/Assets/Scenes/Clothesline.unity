@@ -169,6 +169,7 @@ MonoBehaviour:
   _clicked:
     m_PersistentCalls:
       m_Calls: []
+  _isPickupable: 0
 --- !u!61 &134073113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -519,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac7e2fb6ef00bc4796326bce908edef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClothingMovement
+  translationAmount: 2
 --- !u!114 &530662610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +536,7 @@ MonoBehaviour:
   _clicked:
     m_PersistentCalls:
       m_Calls: []
+  _isPickupable: 0
 --- !u!61 &530662611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -635,6 +638,7 @@ MonoBehaviour:
   _clicked:
     m_PersistentCalls:
       m_Calls: []
+  _isPickupable: 0
 --- !u!1 &811412610
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,8 +883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClotheslineMovement
   isRight: 0
-  rightMaxPos: 0
-  leftMaxPos: -10.5
 --- !u!114 &860748126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +898,7 @@ MonoBehaviour:
   _clicked:
     m_PersistentCalls:
       m_Calls: []
+  _isPickupable: 0
 --- !u!61 &860748127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1111,8 +1114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClotheslineMovement
   isRight: 1
-  rightMaxPos: 3
-  leftMaxPos: 0
 --- !u!61 &1126731081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1174,6 +1175,7 @@ MonoBehaviour:
   _clicked:
     m_PersistentCalls:
       m_Calls: []
+  _isPickupable: 0
 --- !u!1 &1495223410
 GameObject:
   m_ObjectHideFlags: 0

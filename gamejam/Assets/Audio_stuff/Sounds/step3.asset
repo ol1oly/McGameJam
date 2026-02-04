@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: olivier::Sound
   name: step3
   clip: {fileID: 8300000, guid: 567eaf7052bec1f41ad8fdee5a40a4c6, type: 3}
-  volume: 0.05
+  volume: 0.08
   pitch: 1
   loop: 0
   fadeInTime: 0

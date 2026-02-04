@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: olivier::Sound
   name: flap4
   clip: {fileID: 8300000, guid: 0c824eda72e7933419dcfade591bb117, type: 3}
-  volume: 0.05
+  volume: 0.075
   pitch: 1
   loop: 0
   fadeInTime: 0

@@ -586,13 +586,14 @@ GameObject:
   - component: {fileID: 4820610666329438670}
   - component: {fileID: 3552898780735759625}
   - component: {fileID: 1656814866677343893}
+  - component: {fileID: 2427408363738008890}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &200551125334050174
 Transform:
   m_ObjectHideFlags: 0
@@ -804,3 +805,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c9afb93e57bf1479ab447eee4dc0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &2427408363738008890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024253363512690336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e50dee839fa424ca4f1cd1c95185a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CawCrow

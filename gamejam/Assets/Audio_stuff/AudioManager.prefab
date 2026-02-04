@@ -77,10 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068607ef69cf5ca408aaf96e81cb6b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
-  level1Music: level1
-  level2Music: level2
-  playEmergencyLoop2: emergency
-  level3Music: level3
+  level1Music: {fileID: 11400000, guid: 8d520801783fb284bb1a914816863a2a, type: 2}
+  level2Music: {fileID: 11400000, guid: 3ba2622e22c12284d9f869e35e5c7b90, type: 2}
+  playEmergencyLoop2: {fileID: 11400000, guid: e6039028fab1d544bb4f2a5bde9d5d9c, type: 2}
+  level3Music: {fileID: 11400000, guid: 6949056ae6b3da84e85e1d25d68b91f9, type: 2}
 --- !u!1 &8348222573520250324
 GameObject:
   m_ObjectHideFlags: 0

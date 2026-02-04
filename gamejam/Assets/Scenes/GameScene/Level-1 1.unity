@@ -2657,10 +2657,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crow
       objectReference: {fileID: 0}
-    - target: {fileID: 3024253363512690336, guid: 6c125cd14b9b3354db214f9713267479, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4607,11 +4603,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8453772910648166947, guid: 8ca5214794420444bb3574234cf4076b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914944785}
   m_SourcePrefab: {fileID: 100100000, guid: 8ca5214794420444bb3574234cf4076b, type: 3}
 --- !u!1 &1658349116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1984202463639204428, guid: 8ca5214794420444bb3574234cf4076b, type: 3}
+  m_PrefabInstance: {fileID: 1658349115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1658349117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8453772910648166947, guid: 8ca5214794420444bb3574234cf4076b, type: 3}
   m_PrefabInstance: {fileID: 1658349115}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699479445
@@ -5220,6 +5224,18 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1965622237863272744, guid: 8ca5214794420444bb3574234cf4076b, type: 3}
   m_PrefabInstance: {fileID: 1658349115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914944785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658349117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f66ffb868d56c438a7650533d86b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: olivier::AudioGirl
 --- !u!1 &2022166776
 GameObject:
   m_ObjectHideFlags: 0

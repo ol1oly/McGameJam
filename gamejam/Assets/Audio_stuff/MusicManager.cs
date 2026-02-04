@@ -6,10 +6,10 @@ public class MusicManager : MonoBehaviour
 {
     AudioManager manager;
 
-    public string level1Music;
-    public string level2Music;
-    public string playEmergencyLoop2;
-    public string level3Music;
+    public Sound level1Music;
+    public Sound level2Music;
+    public Sound playEmergencyLoop2;
+    public Sound level3Music;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,8 +25,8 @@ public class MusicManager : MonoBehaviour
         }
         else if (sceneName.Contains("2"))
         {
-            manager.PlaySound(level2Music);
-            StartCoroutine(playEmergencyLoop(manager.GetSoundLength(level2Music) - 1));
+            manager.PlaySound(level2Music, PlayEmergency);
+
         }
         else
         {
@@ -40,11 +40,12 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    IEnumerator playEmergencyLoop(float time)
+    void PlayEmergency()
     {
-        yield return new WaitForSeconds(time);
-        manager.PlaySound(playEmergencyLoop2);
-
+        playEmergencyLoop2.volume = level2Music.volume;
+        manager.PlaySound(playEmergencyLoop2, nothing);
 
     }
+    void nothing() { }
+
 }

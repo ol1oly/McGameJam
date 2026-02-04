@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using UnityEditor;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class AudioManager : MonoBehaviour
 
             source.loop = clip.loop;
             source.clip = clip.clip;
+            source.pitch = clip.pitch;
             source.Play();
             source.volume = 0;
             StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
@@ -99,26 +101,23 @@ public class AudioManager : MonoBehaviour
         if (sound == null)
         {
             Debug.LogError("the sound is null");
-        }
-
-        if (sound != null)
-        {
-
-            AudioSource source = GetAvailableSource();
-            if (sound.playOneShot)
-            {
-                source.PlayOneShot(sound.clip, sound.volume);
-                return;
-            }
-
-            source.loop = sound.loop;
-            source.clip = sound.clip;
-            source.Play();
-            source.volume = 0;
-            StartCoroutine(FadeAudio(source, sound.fadeInTime, sound.volume));
             return;
-
         }
+
+        AudioSource source = GetAvailableSource();
+        if (sound.playOneShot)
+        {
+            source.PlayOneShot(sound.clip, sound.volume);
+            return;
+        }
+
+        source.loop = sound.loop;
+        source.clip = sound.clip;
+        source.pitch = sound.pitch;
+        source.Play();
+        source.volume = 0;
+        StartCoroutine(FadeAudio(source, sound.fadeInTime, sound.volume));
+        return;
     }
 
 
@@ -139,28 +138,51 @@ public class AudioManager : MonoBehaviour
     {
         if (sounds == null || sounds.Count == 0) return;
 
-        Sound clip = sounds[Random.Range(0, sounds.Count)];
+        Sound clip = sounds[UnityEngine.Random.Range(0, sounds.Count)];
 
-        if (clip != null)
-        {
-
-            AudioSource source = GetAvailableSource();
-            if (clip.playOneShot)
-            {
-                source.PlayOneShot(clip.clip, clip.volume);
-                return;
-            }
-
-            source.loop = clip.loop;
-            source.clip = clip.clip;
-            source.Play();
-            source.volume = 0;
-            StartCoroutine(FadeAudio(source, clip.fadeInTime, clip.volume));
-            return;
-
-        }
-
+        PlaySound(clip);
     }
+
+    public void PlaySound(Sound sound, Action fn)
+    {
+        if (sound == null)
+        {
+            Debug.LogError("the sound is null");
+            return;
+        }
+        AudioSource source = GetAvailableSource();
+
+        source.loop = sound.loop;
+        source.clip = sound.clip;
+        source.pitch = sound.pitch;
+
+        double start = AudioSettings.dspTime;
+        source.PlayScheduled(AudioSettings.dspTime);
+        source.volume = 0;
+
+
+        if (!Mathf.Approximately(sound.fadeInTime, 0))
+        {
+            StartCoroutine(FadeAudio(source, sound.fadeInTime, sound.volume));
+        }
+        else
+            source.volume = sound.volume;
+
+
+        double endTime = start + sound.clip.length;
+        StartCoroutine(InvokeAtDspTime(endTime, fn));
+
+        return;
+    }
+    IEnumerator InvokeAtDspTime(double time, Action fn)
+    {
+        while (AudioSettings.dspTime < time)
+            yield return null;
+
+        fn?.Invoke();
+    }
+
+
 
 
 

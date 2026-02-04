@@ -6,10 +6,14 @@ public class Level2CrowMovement : MonoBehaviour
 
     [SerializeField] private Transform imageOffset;
 
+    [SerializeField] private Collider2D floorCollider;
+
     SpriteRenderer[] renderers;
 
     private Animator anim;
     private SpriteRenderer sr;
+
+
 
     //private MouseInputProvider mouse;
     void Awake()//
@@ -40,11 +44,7 @@ public class Level2CrowMovement : MonoBehaviour
             AudioManager.instance.playRandomSound(AudioManager.instance.Cawksounds);
         }
 
-        if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            Debug.Log("caw soujd");
-            AudioManager.instance.playRandomSound(AudioManager.instance.Cawksounds);
-        }
+
     }
 
     void moveInDirection()
@@ -62,18 +62,26 @@ public class Level2CrowMovement : MonoBehaviour
                 r.flipX = flip;
             }
         }
-        Vector3 targetLocal = transform.parent.InverseTransformPoint(mouseWorldPosition); // now local
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, targetLocal, speed * 0.20f * Time.deltaTime);
+
+        Vector3 clampedWorld = mouseWorldPosition;
+        clampedWorld.y = Mathf.Clamp(
+            clampedWorld.y,
+            floorCollider.bounds.max.y,
+            float.PositiveInfinity
+        );
+
+        Vector3 targetLocal = transform.parent.InverseTransformPoint(clampedWorld);
+        transform.localPosition = Vector3.MoveTowards(
+            transform.localPosition,
+            targetLocal,
+            speed * 0.20f * Time.deltaTime
+        );
         // Smoothly move crow toward target
     }
 
 
     public Animator getAnim() { return anim; }
 
-    void playRandomFlapSound()
-    {
-        AudioManager.instance.playRandomSound(AudioManager.instance.flapsounds);
-    }
 
 
 }
