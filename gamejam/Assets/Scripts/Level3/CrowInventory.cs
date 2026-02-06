@@ -37,7 +37,7 @@ public class CrowInventory : MonoBehaviour
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.isKinematic = true;
+            rb.bodyType = RigidbodyType2D.Kinematic;
         }
 
         // Disable collider
@@ -58,7 +58,7 @@ public class CrowInventory : MonoBehaviour
         Rigidbody2D rb = carriedObject.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.isKinematic = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
         // Enable collider
