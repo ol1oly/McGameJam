@@ -2968,7 +2968,7 @@ MonoBehaviour:
   targetArea: {fileID: 1745466938}
   appleDetectionRadius: 1
   appleTag: Apple
-  apple: {fileID: 0}
+  apple: {fileID: 1427835326}
   eatingDuration: 5
   waitDuration: 2
 --- !u!114 &657312919
