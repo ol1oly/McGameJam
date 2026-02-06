@@ -3188,6 +3188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693499841}
+  - component: {fileID: 693499842}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -3214,6 +3215,23 @@ Transform:
   - {fileID: 1774830747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693499842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693499840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889729a7317f79f4b9576ae5682cd381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlammableObject
+  firePrefab: {fileID: 9074092383978216671, guid: d91966f2c3ead7247b8aa5576e866ca6, type: 3}
+  ignitionRadius: 2
+  torchTag: Torch
+  changeColorWhenBurning: 1
+  burningColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!1 &699599973
 GameObject:
   m_ObjectHideFlags: 0
@@ -6069,7 +6087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoneyBag
   guardTag: TorchGuard
-  attractionRadius: 45
+  attractionRadius: 80
   holdOffset: {x: 0.5, y: 0.3}
 --- !u!50 &1364210497
 Rigidbody2D:
