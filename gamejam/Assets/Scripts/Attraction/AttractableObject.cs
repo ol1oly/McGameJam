@@ -164,4 +164,11 @@ public class AttractableObject : MonoBehaviour
         lightLantern.GetComponent<Animator>().SetTrigger("Relight");
         lightLantern.GetComponent<Lantern>().SetClosed(false);
     }
+
+    public void FreezeMovement()
+    {
+        isAttracted = false;
+        shouldReturnToOriginal = false;
+        rb.linearVelocity = Vector2.zero;
+    }
 }
