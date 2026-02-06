@@ -1806,6 +1806,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &409497152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409497153}
+  m_Layer: 0
+  m_Name: Beak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409497153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409497152}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27753392, y: -0.4638941, z: 0}
+  m_LocalScale: {x: 1.2820513, y: 1.2820513, z: 1.2820513}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 442971301}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417200009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +2968,7 @@ MonoBehaviour:
   targetArea: {fileID: 1745466938}
   appleDetectionRadius: 1
   appleTag: Apple
-  apple: {fileID: 0}
+  apple: {fileID: 1427835326}
   eatingDuration: 5
   waitDuration: 2
 --- !u!114 &657312919
@@ -3157,6 +3188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693499841}
+  - component: {fileID: 693499842}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -3183,6 +3215,23 @@ Transform:
   - {fileID: 1774830747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693499842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693499840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889729a7317f79f4b9576ae5682cd381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlammableObject
+  firePrefab: {fileID: 9074092383978216671, guid: d91966f2c3ead7247b8aa5576e866ca6, type: 3}
+  ignitionRadius: 2
+  torchTag: Torch
+  changeColorWhenBurning: 1
+  burningColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!1 &699599973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,6 +4439,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 200551125334050174, guid: 6c125cd14b9b3354db214f9713267479, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1788301036}
+    - targetCorrespondingSourceObject: {fileID: 200551125334050174, guid: 6c125cd14b9b3354db214f9713267479, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 409497153}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c125cd14b9b3354db214f9713267479, type: 3}
 --- !u!1 &934671928
@@ -6035,7 +6087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoneyBag
   guardTag: TorchGuard
-  attractionRadius: 15
+  attractionRadius: 80
   holdOffset: {x: 0.5, y: 0.3}
 --- !u!50 &1364210497
 Rigidbody2D:
@@ -8154,7 +8206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c0dbd9806e54eb701a7bdf3be5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowInventory
-  beakPosition: {fileID: 0}
+  beakPosition: {fileID: 409497153}
   carriedObject: {fileID: 0}
   dropKey: 32
 --- !u!4 &1788301036
