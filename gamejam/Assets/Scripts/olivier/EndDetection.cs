@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(Collider2D))]
@@ -14,7 +15,12 @@ public class EndDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+#if UNITY_EDITOR
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+#endif
     }
 
 

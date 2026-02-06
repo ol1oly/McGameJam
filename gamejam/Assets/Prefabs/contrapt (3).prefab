@@ -5169,13 +5169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93cc3f5cc0a12b4a9e91e3faefc0656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  strength: 4
-  upwardComponent: 0.2
-  velocityMultiplier: 1
-  maxForce: 75
+  data: {fileID: 11400000, guid: 23f9cb6e081bca44fb42a8c3828f156f, type: 2}
   own: {fileID: 3246616705025128261}
-  modePlayer: 0
-  modeBox: 0
 --- !u!1 &4064264413420014267
 GameObject:
   m_ObjectHideFlags: 0
