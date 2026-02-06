@@ -1,21 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class PushBackZone : MonoBehaviour
 {
-    public float strength = 1f;             // own force multiplier
-    public float upwardComponent = 0.2f;    // fraction of upward push
-    public float velocityMultiplier = 1f;
-    public float maxForce = 20f;
+    public PushBackZoneData data;
+
 
 
 
     public Rigidbody2D own;                 // your own Rigidbody2D
 
-    public ForceMode2D modePlayer = ForceMode2D.Force;
-    public ForceMode2D modeBox = ForceMode2D.Force;
 
-    void OnTriggerStay2D(Collider2D other)
+
+    private Dictionary<Collider2D, int> entryCounts = new();
+
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!(other.CompareTag("Player") || other.CompareTag("ennemy"))) return;
         Rigidbody2D rb = other.attachedRigidbody;
@@ -23,10 +23,28 @@ public class PushBackZone : MonoBehaviour
 
         // Own push: mostly right, with small upward component
         Vector2 pushDirection = (own.gameObject.transform.position - rb.gameObject.transform.position).normalized;
+        /*pushDirection.y += data.upwardComponent;
+        pushDirection = pushDirection.normalized;*/
+        pushDirection = new Vector2(pushDirection.x, data.upwardComponent).normalized;
 
-        float forceAmount = strength;
-        forceAmount = Mathf.Min(forceAmount, maxForce);
-        own.AddForce(pushDirection * forceAmount, modeBox);
+        float forceAmount = Mathf.Min(data.strength, data.maxForce);
+
+        if (!CanApplyToCollider(other))
+            return;
+        own.linearVelocity = pushDirection * forceAmount;
     }
+
+    bool CanApplyToCollider(Collider2D col)
+    {
+        if (!entryCounts.TryGetValue(col, out int count))
+            count = 0;
+
+        count++;
+        entryCounts[col] = count;
+
+        return count <= data.maxEntriesPerCollider;
+    }
+
+
 
 }

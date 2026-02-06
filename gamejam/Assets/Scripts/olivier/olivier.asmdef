@@ -1,3 +1,6 @@
 {
-	"name": "olivier"
+    "name": "olivier",
+    "references": [
+        "Unity.InputSystem"
+    ]
 }
